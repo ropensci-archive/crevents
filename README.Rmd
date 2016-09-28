@@ -1,0 +1,42 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  comment = "#>",
+  collapse = TRUE
+)
+```
+
+`crevents`  Crossref events data client
+
+## Installation
+
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("ropenscilabs/crevents")
+```
+
+```{r}
+library('crevents')
+```
+
+## examples
+
+```{r}
+res <- cred_occurred(date = '2016-08-27', source = 'twitter')
+tibble::as_data_frame(res$events)
+```
+
+```{r}
+res <- cred_collected(date = '2016-08-27', source = 'twitter')
+tibble::as_data_frame(res$events)
+```
+
+## Meta
+
+* Please [report any issues or bugs](https://github.com/ropenscilabs/crevents/issues).
+* License: MIT
+* Get citation information for `crevents` in R doing `citation(package = 'crevents')`
+* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+
+[![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
