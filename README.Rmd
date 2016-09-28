@@ -9,6 +9,8 @@ knitr::opts_chunk$set(
 
 `crevents`  Crossref events data client
 
+Crossref Events Data docs - <http://eventdata.crossref.org/guide/#the-service>
+
 ## Installation
 
 ```{r eval=FALSE}

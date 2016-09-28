@@ -2,6 +2,8 @@
 
 `crevents`  Crossref events data client
 
+Crossref Events Data docs - <http://eventdata.crossref.org/guide/#the-service>
+
 ## Installation
 
 
