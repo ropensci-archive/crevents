@@ -1,5 +1,7 @@
 
 
+[![Build Status](https://travis-ci.org/ropenscilabs/crevents.svg?branch=master)](https://travis-ci.org/ropenscilabs/crevents)
+
 `crevents`  Crossref events data client
 
 Crossref Events Data docs - <http://eventdata.crossref.org/guide/#the-service>
@@ -21,8 +23,14 @@ library('crevents')
 
 
 ```r
-res <- cred_occurred(date = '2016-08-27', source = 'twitter')
-tibble::as_data_frame(res$events)
+cred_occurred(date = '2016-08-27', source = 'twitter')
+#> $`message-type`
+#> [1] "event-list"
+#> 
+#> $`total-events`
+#> [1] 7511
+#> 
+#> $events
 #> # A tibble: 7,511 × 15
 #>                                       obj_id          occurred_at
 #> *                                      <chr>                <chr>
@@ -45,8 +53,14 @@ tibble::as_data_frame(res$events)
 
 
 ```r
-res <- cred_collected(date = '2016-08-27', source = 'twitter')
-tibble::as_data_frame(res$events)
+cred_collected(date = '2016-08-27', source = 'twitter')
+#> $`message-type`
+#> [1] "event-list"
+#> 
+#> $`total-events`
+#> [1] 7511
+#> 
+#> $events
 #> # A tibble: 7,511 × 15
 #>                                       obj_id          occurred_at
 #> *                                      <chr>                <chr>

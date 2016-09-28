@@ -7,6 +7,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+[![Build Status](https://travis-ci.org/ropenscilabs/crevents.svg?branch=master)](https://travis-ci.org/ropenscilabs/crevents)
+
 `crevents`  Crossref events data client
 
 Crossref Events Data docs - <http://eventdata.crossref.org/guide/#the-service>
@@ -25,13 +27,11 @@ library('crevents')
 ## examples
 
 ```{r}
-res <- cred_occurred(date = '2016-08-27', source = 'twitter')
-tibble::as_data_frame(res$events)
+cred_occurred(date = '2016-08-27', source = 'twitter')
 ```
 
 ```{r}
-res <- cred_collected(date = '2016-08-27', source = 'twitter')
-tibble::as_data_frame(res$events)
+cred_collected(date = '2016-08-27', source = 'twitter')
 ```
 
 ## Meta
