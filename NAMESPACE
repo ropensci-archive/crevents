@@ -3,5 +3,3 @@
 export(cred_collected)
 export(cred_evidence)
 export(cred_occurred)
-import(httr)
-import(jsonlite)

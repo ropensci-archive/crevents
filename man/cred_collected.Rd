@@ -18,6 +18,22 @@ cred_collected(date, source = NULL, work = NULL, ...)
 \description{
 collected
 }
+\section{Collected vs. Occurred}{
+
+\itemize{
+ \item \strong{collected} is useful when you want to run a daily query to 
+ fetch all Events for a given filter and you want to be sure you always 
+ have all available Events
+ \item \strong{collected} is useful when you want to reference a dataset 
+ and be sure it never changes
+ \item \strong{occurred} is useful when you want to retrieve Events that
+ occurred at a particular time
+ \item when using \strong{occurred} you should be aware that new Events 
+ may be collected at any time in the future that occurred at a date 
+ in the past
+}
+}
+
 \section{Pagination}{
 
 Pagination is not done in a typical fashion with query parameters 
@@ -45,22 +61,23 @@ parameter:
 \examples{
 \dontrun{
 # all works for a single date, across all sources
-res <- cred_collected(date = '2016-08-27', config=verbose())
+res <- cred_collected(date = '2016-08-27')
 res$`message-type`
 res$`total-events`
-tibble::as_data_frame(res$events)
+res$events
 
 # all works, for a single source on a single date
-res <- cred_collected(date = '2016-08-27', source = 'twitter', config=verbose())
+res <- cred_collected(date = '2016-08-27', source = 'twitter')
 res$`message-type`
 res$`total-events`
-tibble::as_data_frame(res$events)
+res$events
 
 # single work, on a single date, for a single source
-res <- cred_collected(date = '2016-08-27', work = '10.1107/S2056989016013359', source = 'twitter', config=verbose())
+res <- cred_collected(date = '2016-08-27', work = '10.1107/S2056989016013359',
+  source = 'twitter')
 res$`message-type`
 res$`total-events`
-tibble::as_data_frame(res$events)
+res$events
 }
 }
 

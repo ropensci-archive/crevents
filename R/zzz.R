@@ -3,9 +3,9 @@ cr_base <- function() "http://%s.eventdata.crossref.org"
 cmp <- function(x) Filter(Negate(is.null), x)
 
 crev_GET <- function(x, ...) {
-  out <- GET(x, ...)
-  stop_for_status(out)
-  tt <- content(out, as = "text", encoding = "UTF-8")
+  out <- httr::GET(x, ...)
+  httr::stop_for_status(out)
+  tt <- httr::content(out, as = "text", encoding = "UTF-8")
   jsonlite::fromJSON(tt, TRUE, flatten = TRUE)
 }
 
@@ -32,3 +32,8 @@ metadf <- function(x){
 }
 
 `%||%` <- function(x, y) if (length(x)) x else y
+
+set_df <- function(x) {
+  x$events <- tibble::as_data_frame(x$events)
+  return(x)
+}

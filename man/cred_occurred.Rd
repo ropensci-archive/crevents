@@ -21,13 +21,17 @@ occurred
 \examples{
 \dontrun{
 # all works for a single date, across all sources
-res <- cred_occurred(date = '2016-08-27', config=verbose())
+res <- cred_occurred(date = '2016-08-27')
 
 # all works, for a single source on a single date
-res <- cred_occurred(date = '2016-08-27', source = 'twitter', config=verbose())
+res <- cred_occurred(date = '2016-08-27', source = 'twitter')
+res$`message-type`
+res$`total-events`
+res$events
 
 # single work, on a single date, for a single source
-res <- cred_occurred(date = '2016-08-27', work = '10.1107/S2056989016013359', source = 'twitter', config=verbose())
+res <- cred_occurred(date = '2016-08-27', work = '10.1107/S2056989016013359',
+  source = 'twitter')
 res$`message-type`
 res$`total-events`
 res$events
