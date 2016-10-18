@@ -2,9 +2,12 @@
 % Please edit documentation in R/cre_collected.R
 \name{cred_collected}
 \alias{cred_collected}
+\alias{cred_collected_}
 \title{collected}
 \usage{
 cred_collected(date, source = NULL, work = NULL, ...)
+
+cred_collected_(dates, source = NULL, work = NULL, ...)
 }
 \arguments{
 \item{date}{(character) a POSIX date. required.}
@@ -14,6 +17,11 @@ cred_collected(date, source = NULL, work = NULL, ...)
 \item{work}{(character) a work DOI. optional}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+
+\item{dates}{(character) Two or more dates. required. dates must be of the 
+form YYYY-MM-DD. You can easily create a sequence of dates like 
+\code{seq(from = as.Date("2016-08-01"), to = as.Date("2016-10-18"), 
+by = "day")}}
 }
 \description{
 collected
@@ -72,12 +80,27 @@ res$`message-type`
 res$`total-events`
 res$events
 
+# single work, on a single date, for all sources
+res <- cred_collected(date = '2016-08-27', work = '10.1107/S2056989016013359')
+res$`message-type`
+res$`total-events`
+res$events
+
 # single work, on a single date, for a single source
 res <- cred_collected(date = '2016-08-27', work = '10.1107/S2056989016013359',
   source = 'twitter')
 res$`message-type`
 res$`total-events`
 res$events
+
+# single work, with a range of dates, for a single source
+dates <- seq(from = as.Date("2016-08-01"), to = as.Date("2016-10-18"), 
+  by = "day")
+res <- cred_collected_(dates, work = '10.1056/NEJMP1608511')
+res[[1]]
+res[[2]]
+lapply(res, "[[", "events")
+do.call("rbind.data.frame", lapply(res, "[[", "events"))
 }
 }
 
