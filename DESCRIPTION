@@ -2,7 +2,7 @@ Package: crevents
 Title: Client for the Crossref Events API
 Description: Client for the Crossref Events API 
     <http://eventdata.crossref.org/guide/#the-service>.
-Version: 0.0.3.9000
+Version: 0.0.4.9000
 License: MIT + file LICENSE
 Authors@R: c(
     person("Scott", "Chamberlain", role = c("aut", "cre"), email = "myrmecocystus@gmail.com")
