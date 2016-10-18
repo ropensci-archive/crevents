@@ -22,14 +22,18 @@ crev_GET <- function(x, ...) {
     tt <- httr::content(out, as = "text", encoding = "UTF-8")
     jsonlite::fromJSON(tt, TRUE, flatten = TRUE)
   } else {
-    list(
-      `message-type` = NULL,
-      `total-events` = NULL,
-      events = tibble::data_frame(),
-      `previous` = NULL,
-      `next` = NULL
-    )
+    no_res_result()
   }
+}
+
+no_res_result <- function(x) {
+  list(
+    `message-type` = NULL,
+    `total-events` = NULL,
+    events = tibble::data_frame(),
+    `previous` = NULL,
+    `next` = NULL
+  )  
 }
 
 handle_errors <- function(x) {
@@ -78,3 +82,11 @@ set_df <- function(x) {
   }
   return(x)
 }
+
+make_paths <- function(type, date, source, work) {
+  da_te <- file.path(type, date)
+  sou_rce <- file.path("sources", source) %||% ""
+  wo_rk <- file.path("works", work) %||% ""
+  gsub("//", "/", gsub("/+$", "", file.path(da_te, wo_rk, sou_rce)))
+}
+

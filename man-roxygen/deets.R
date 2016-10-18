@@ -32,3 +32,17 @@
 #'  \item wordpressdotcom
 #'  \item datacite_crossref
 #' }
+#' 
+#' @section Async notes:
+#' Async usees \pkg{curl} directly for doing async requests, while
+#' non-async requests use \pkg{httr}, which depends on \pkg{curl}. 
+#' 
+#' Async requests return essentially the same results compared to 
+#' non-async, although the order is different since the requests from
+#' async are not given back in order given. Just be aware of this.
+#' 
+#' If you run into any problems with async let us know at 
+#' \url{http://www.github.com/ropenscilabs/crevents/issues}
+#' 
+#' Note that for now, when doing async you can't pass on curl options - 
+#' will try to add later.
