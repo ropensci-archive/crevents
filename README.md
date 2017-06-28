@@ -1,10 +1,13 @@
+crevents
+========
+
 
 
 [![Build Status](https://travis-ci.org/ropenscilabs/crevents.svg?branch=master)](https://travis-ci.org/ropenscilabs/crevents)
 
 `crevents`  Crossref events data client
 
-Crossref Events Data docs - <http://eventdata.crossref.org/guide/#the-service>
+Crossref Events Data docs - <https://www.eventdata.crossref.org/guide/index.html>
 
 ## Installation
 
@@ -19,66 +22,74 @@ devtools::install_github("ropenscilabs/crevents")
 library('crevents')
 ```
 
-## examples
+## query
 
 
 ```r
-cred_occurred(date = '2016-08-27', source = 'twitter')
+cred_query(rows = 10)
+#> $status
+#> [1] "ok"
+#> 
 #> $`message-type`
 #> [1] "event-list"
 #> 
-#> $`total-events`
-#> [1] 7511
+#> $message
+#> $message$`next-cursor`
+#> [1] "355eb688-f526-46a6-9396-993c12cc313c"
 #> 
-#> $events
-#> # A tibble: 7,511 × 15
-#>                                       obj_id          occurred_at
-#> *                                      <chr>                <chr>
-#> 1  https://doi.org/10.1107/S2053229616013280 2016-08-27T00:00:05Z
-#> 2  https://doi.org/10.1107/S2056989016013359 2016-08-27T00:00:05Z
-#> 3  https://doi.org/10.1107/S2053229616012973 2016-08-27T00:00:05Z
-#> 4  https://doi.org/10.1107/S2414314616013389 2016-08-27T00:00:05Z
-#> 5  https://doi.org/10.1107/S241431461601316X 2016-08-27T00:00:05Z
-#> 6  https://doi.org/10.1107/S2414314616012992 2016-08-27T00:00:06Z
-#> 7  https://doi.org/10.1107/S205322961601281X 2016-08-27T00:00:06Z
-#> 8  https://doi.org/10.1107/S2056989016013190 2016-08-27T00:00:05Z
-#> 9  https://doi.org/10.1107/S2056989016013256 2016-08-27T00:00:06Z
-#> 10 https://doi.org/10.1107/S2053229616013565 2016-08-27T00:00:06Z
-#> # ... with 7,501 more rows, and 13 more variables: subj_id <chr>,
-#> #   total <int>, id <chr>, message_action <chr>, source_id <chr>,
-#> #   timestamp <chr>, relation_type_id <chr>, subj.pid <chr>,
-#> #   subj.title <chr>, subj.issued <chr>, subj.URL <chr>, subj.type <chr>,
-#> #   subj.author.literal <chr>
+#> $message$`total-results`
+#> [1] 14206534
+#> 
+#> $message$`items-per-page`
+#> [1] 10
+#> 
+#> $message$events
+#> # A tibble: 10 x 21
+#>                                               license
+#>  *                                              <chr>
+#>  1 https://creativecommons.org/publicdomain/zero/1.0/
+#>  2 https://creativecommons.org/publicdomain/zero/1.0/
+#>  3 https://creativecommons.org/publicdomain/zero/1.0/
+#>  4 https://creativecommons.org/publicdomain/zero/1.0/
+#>  5 https://creativecommons.org/publicdomain/zero/1.0/
+#>  6 https://creativecommons.org/publicdomain/zero/1.0/
+#>  7 https://creativecommons.org/publicdomain/zero/1.0/
+#>  8 https://creativecommons.org/publicdomain/zero/1.0/
+#>  9 https://creativecommons.org/publicdomain/zero/1.0/
+#> 10 https://creativecommons.org/publicdomain/zero/1.0/
+#> # ... with 20 more variables: obj_id <chr>, source_token <chr>,
+#> #   occurred_at <chr>, subj_id <chr>, id <chr>, evidence_record <chr>,
+#> #   terms <chr>, action <chr>, source_id <chr>, timestamp <chr>,
+#> #   relation_type_id <chr>, subj.pid <chr>, subj.title <chr>,
+#> #   subj.issued <chr>, `subj.original-tweet-url` <chr>,
+#> #   `subj.original-tweet-author` <chr>, `subj.alternative-id` <chr>,
+#> #   subj.author.url <chr>, obj.pid <chr>, obj.url <chr>
 ```
 
+Limit to events from Reddit
+
 
 ```r
-cred_collected(date = '2016-08-27', source = 'twitter')
-#> $`message-type`
-#> [1] "event-list"
-#> 
-#> $`total-events`
-#> [1] 7511
-#> 
-#> $events
-#> # A tibble: 7,511 × 15
-#>                                       obj_id          occurred_at
-#> *                                      <chr>                <chr>
-#> 1  https://doi.org/10.1107/S2053229616013280 2016-08-27T00:00:05Z
-#> 2  https://doi.org/10.1107/S2056989016013359 2016-08-27T00:00:05Z
-#> 3  https://doi.org/10.1107/S2053229616012973 2016-08-27T00:00:05Z
-#> 4  https://doi.org/10.1107/S2414314616013389 2016-08-27T00:00:05Z
-#> 5  https://doi.org/10.1107/S241431461601316X 2016-08-27T00:00:05Z
-#> 6  https://doi.org/10.1107/S2414314616012992 2016-08-27T00:00:06Z
-#> 7  https://doi.org/10.1107/S205322961601281X 2016-08-27T00:00:06Z
-#> 8  https://doi.org/10.1107/S2056989016013190 2016-08-27T00:00:05Z
-#> 9  https://doi.org/10.1107/S2056989016013256 2016-08-27T00:00:06Z
-#> 10 https://doi.org/10.1107/S2053229616013565 2016-08-27T00:00:06Z
-#> # ... with 7,501 more rows, and 13 more variables: subj_id <chr>,
-#> #   total <int>, id <chr>, message_action <chr>, source_id <chr>,
-#> #   timestamp <chr>, relation_type_id <chr>, subj.pid <chr>,
-#> #   subj.title <chr>, subj.issued <chr>, subj.URL <chr>, subj.type <chr>,
-#> #   subj.author.literal <chr>
+x <- cred_query(rows = 10, filter = list(source = "reddit"))
+x$message$events
+#> # A tibble: 10 x 18
+#>                                               license
+#>  *                                              <chr>
+#>  1 https://creativecommons.org/publicdomain/zero/1.0/
+#>  2 https://creativecommons.org/publicdomain/zero/1.0/
+#>  3 https://creativecommons.org/publicdomain/zero/1.0/
+#>  4 https://creativecommons.org/publicdomain/zero/1.0/
+#>  5 https://creativecommons.org/publicdomain/zero/1.0/
+#>  6 https://creativecommons.org/publicdomain/zero/1.0/
+#>  7 https://creativecommons.org/publicdomain/zero/1.0/
+#>  8 https://creativecommons.org/publicdomain/zero/1.0/
+#>  9 https://creativecommons.org/publicdomain/zero/1.0/
+#> 10 https://creativecommons.org/publicdomain/zero/1.0/
+#> # ... with 17 more variables: obj_id <chr>, source_token <chr>,
+#> #   occurred_at <chr>, subj_id <chr>, id <chr>, evidence_record <chr>,
+#> #   terms <chr>, action <chr>, source_id <chr>, timestamp <chr>,
+#> #   relation_type_id <chr>, subj.pid <chr>, subj.type <chr>,
+#> #   subj.title <chr>, subj.issued <chr>, obj.pid <chr>, obj.url <chr>
 ```
 
 ## Meta
@@ -88,4 +99,4 @@ cred_collected(date = '2016-08-27', source = 'twitter')
 * Get citation information for `crevents` in R doing `citation(package = 'crevents')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-[![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+[![ropensci_footer](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)

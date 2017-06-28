@@ -1,3 +1,6 @@
+crevents
+========
+
 ```{r echo=FALSE}
 knitr::opts_chunk$set(
   warning = FALSE,
@@ -11,7 +14,7 @@ knitr::opts_chunk$set(
 
 `crevents`  Crossref events data client
 
-Crossref Events Data docs - <http://eventdata.crossref.org/guide/#the-service>
+Crossref Events Data docs - <https://www.eventdata.crossref.org/guide/index.html>
 
 ## Installation
 
@@ -24,14 +27,17 @@ devtools::install_github("ropenscilabs/crevents")
 library('crevents')
 ```
 
-## examples
+## query
 
 ```{r}
-cred_occurred(date = '2016-08-27', source = 'twitter')
+cred_query(rows = 10)
 ```
 
+Limit to events from Reddit
+
 ```{r}
-cred_collected(date = '2016-08-27', source = 'twitter')
+x <- cred_query(rows = 10, filter = list(source = "reddit"))
+x$message$events
 ```
 
 ## Meta
@@ -41,4 +47,4 @@ cred_collected(date = '2016-08-27', source = 'twitter')
 * Get citation information for `crevents` in R doing `citation(package = 'crevents')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-[![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+[![ropensci_footer](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
