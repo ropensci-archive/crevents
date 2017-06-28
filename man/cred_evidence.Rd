@@ -72,6 +72,7 @@ If you run into any problems with async let us know at
 Note that for now, when doing async you can't pass on curl options - 
 will try to add later.
 }
+
 \examples{
 \dontrun{
 # get some data
@@ -84,4 +85,3 @@ cred_evidence(id = "06630d1f-3add-4478-a2c8-faa38728e0d8", config=verbose())
 foo <- lapply(res$events$id[1:5], cred_evidence)
 }
 }
-

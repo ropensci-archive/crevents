@@ -2,14 +2,13 @@
 % Please edit documentation in R/crevents-package.R
 \docType{package}
 \name{crevents-package}
-\alias{crevents}
 \alias{crevents-package}
+\alias{crevents}
 \title{Client for the Crossref Events API}
 \description{
 Client for the Crossref Events API
 }
 \author{
-Scott Chamberlain \email{myrmecocystus@gmail.com}
+Scott Chamberlain \email{myrmecocystus+r@gmail.com}
 }
 \keyword{package}
-

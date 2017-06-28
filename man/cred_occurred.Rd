@@ -86,6 +86,7 @@ If you run into any problems with async let us know at
 Note that for now, when doing async you can't pass on curl options - 
 will try to add later.
 }
+
 \examples{
 \dontrun{
 # all works for a single date, across all sources
@@ -124,4 +125,3 @@ lapply(res_async, "[[", "events")
 do.call("rbind.data.frame", lapply(res_async, "[[", "events"))
 }
 }
-

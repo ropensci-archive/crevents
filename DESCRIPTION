@@ -1,21 +1,23 @@
 Package: crevents
 Title: Client for the Crossref Events API
 Description: Client for the Crossref Events API 
-    <http://eventdata.crossref.org/guide/#the-service>.
-Version: 0.0.4.9000
+    <https://www.crossref.org/services/event-data/#the-service>.
+Version: 0.0.5.9200
 License: MIT + file LICENSE
 Authors@R: c(
-    person("Scott", "Chamberlain", role = c("aut", "cre"), email = "myrmecocystus@gmail.com")
+    person("Scott", "Chamberlain", role = c("aut", "cre"), 
+      email = "myrmecocystus+r@gmail.com")
     )
 URL: https://github.com/ropenscilabs/crevents
-BugReports: http://www.github.com/ropenscilabs/crevents/issues
+BugReports: https://github.com/ropenscilabs/crevents/issues
 LazyData: true
 Imports:
     httr (>= 1.2.0),
+    crul (>= 0.3.8),
     curl (>= 2.1),
     jsonlite (>= 1.1),
     tibble (>= 1.2),
     xml2 (>= 1.0.0)
 Suggests:
-    roxygen2 (>= 5.0.1)
-RoxygenNote: 5.0.1
+    roxygen2 (>= 6.0.1)
+RoxygenNote: 6.0.1
