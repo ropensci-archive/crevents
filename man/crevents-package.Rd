@@ -6,7 +6,8 @@
 \alias{crevents}
 \title{Client for the Crossref Events API}
 \description{
-Client for the Crossref Events API
+Documentation for the Crossref Events Data service at
+\url{https://www.eventdata.crossref.org/guide/index.html}
 }
 \author{
 Scott Chamberlain \email{myrmecocystus+r@gmail.com}

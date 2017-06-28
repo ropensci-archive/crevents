@@ -1,29 +1,36 @@
-cr_base <- function() "http://%s.eventdata.crossref.org"
+cred_base <- function() "http://%s.eventdata.crossref.org/events"
 
 cmp <- function(x) Filter(Negate(is.null), x)
 
 crevents_ua <- function() {
-  versions <- c(paste0("r-curl/", utils::packageVersion("curl")),
-                paste0("httr/", utils::packageVersion("httr")),
-                sprintf("rOpenSci(crevents/%s)", utils::packageVersion("crevents")))
+  versions <- c(
+    paste0("r-curl/", utils::packageVersion("curl")),
+    paste0("crul/", utils::packageVersion("crul")),
+    sprintf("rOpenSci(crevents/%s)", utils::packageVersion("crevents")))
   paste0(versions, collapse = " ")
 }
 
-make_cr_ua <- function() {
-  c(
-    httr::user_agent(crevents_ua()),
-    httr::add_headers(`X-USER-AGENT` = crevents_ua())
-  )
-}
+# make_cr_ua <- function() {
+#   c(
+#     httr::user_agent(crevents_ua()),
+#     httr::add_headers(`X-USER-AGENT` = crevents_ua())
+#   )
+# }
 
-crev_GET <- function(x, ...) {
-  out <- httr::GET(x, make_cr_ua(), ...)
-  if (handle_errors(out)) {
-    tt <- httr::content(out, as = "text", encoding = "UTF-8")
-    jsonlite::fromJSON(tt, TRUE, flatten = TRUE)
-  } else {
-    no_res_result()
+crev_GET <- function(x, args, ...) {
+  cli <- crul::HttpClient$new(
+    url = x,
+    opts = list(useragent = crevents_ua())
+  )
+  temp <- cli$get(query = args, ...)
+  if (temp$status_code > 201) {
+    tt <- temp$parse("UTF-8")
+    res <- jsonlite::fromJSON(tt, FALSE)
+    stat <- temp$status_http()
+    stop(sprintf('(%s) %s\n  %s', stat$status_code, stat$message, res$message[[1]]$message))
   }
+  x <- temp$parse("UTF-8")
+  jsonlite::fromJSON(x, TRUE, flatten = TRUE)
 }
 
 no_res_result <- function(x) {
@@ -36,21 +43,21 @@ no_res_result <- function(x) {
   )  
 }
 
-handle_errors <- function(x) {
-  if (x$status_code > 201) {
-    tmp <- httr::content(x, as = "text", encoding = "UTF-8")
-    html <- xml2::read_html(tmp)
-    mssg <- paste(
-      xml2::xml_text(xml2::xml_find_first(html, "//li[contains(text(),'Code:')]")),
-      xml2::xml_text(xml2::xml_find_first(html, "//li[contains(text(),'Message:')]")),
-      sep = "\n       "
-    )
-    warning(mssg, call. = FALSE)
-    return(FALSE)
-  } else {
-    return(TRUE)
-  }
-}
+# handle_errors <- function(x) {
+#   if (x$status_code > 201) {
+#     tmp <- x$parse("UTF-8")
+#     html <- xml2::read_html(tmp)
+#     mssg <- paste(
+#       xml2::xml_text(xml2::xml_find_first(html, "//li[contains(text(),'Code:')]")),
+#       xml2::xml_text(xml2::xml_find_first(html, "//li[contains(text(),'Message:')]")),
+#       sep = "\n       "
+#     )
+#     warning(mssg, call. = FALSE)
+#     return(FALSE)
+#   } else {
+#     return(TRUE)
+#   }
+# }
 
 pluck <- function(x, name, type) {
   if (missing(type)) {
@@ -74,11 +81,24 @@ metadf <- function(x){
   data.frame(tmp, stringsAsFactors = FALSE)
 }
 
+asl <- function(z) {
+  # z <- tolower(z)
+  if (is.logical(z) || tolower(z) == "true" || tolower(z) == "false") {
+    if (z) {
+      return('true')
+    } else {
+      return('false')
+    }
+  } else {
+    return(z)
+  }
+}
+
 `%||%` <- function(x, y) if (length(x)) x else y
 
 set_df <- function(x) {
   if (NROW(x) != 0) {
-    x$events <- tibble::as_data_frame(x$events)
+    x$message$events <- tibble::as_data_frame(x$message$events)
   }
   return(x)
 }
