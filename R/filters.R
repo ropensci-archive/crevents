@@ -13,6 +13,7 @@ filter_handler <- function(x){
                  obj_id_domain = 'obj-id.domain',
                  subj_url = 'subj.url',
                  obj_url = 'obj.url',
+                 obj_id = 'obj.id',
                  subj_url_domain = 'subj.url.domain',
                  obj_url_domain = 'obj.url.domain',
                  subj_alternative_id = 'subj.alternative-id',

@@ -39,5 +39,20 @@ res$message$events
 # filters
 ## filter with source = reddit
 (res <- cred_query(rows = 10, filter = list(source = "reddit")))
+
+# on the first of March 2017
+cred_query(rows=10, filter=list(from_collected_date = "2017-03-01", 
+  until_collected_date = "2017-03-01"))
+  
+# in the month of March 2017
+cred_query(rows=10, filter=list(from_collected_date = "2017-03-01", 
+  until_collected_date = "2017-03-31"))
+  
+# in the month of March 2017
+cred_query(rows=10, filter=list(from_collected_date = "2017-03-01", 
+  until_collected_date = "2017-03-31"))
+  
+# Up to ten Events for a DOI prefix
+cred_query(rows=10, filter=list(obj_id_prefix = "10.1186"))
 }
 }
