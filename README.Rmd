@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 
 [![Build Status](https://travis-ci.org/ropenscilabs/crevents.svg?branch=master)](https://travis-ci.org/ropenscilabs/crevents)
 
-`crevents`  Crossref events data client
+`crevents`  Crossref events data R client
 
 Crossref Events Data docs - <https://www.eventdata.crossref.org/guide/index.html>
 
