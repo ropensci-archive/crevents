@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Build Status](https://travis-ci.org/ropenscilabs/crevents.svg?branch=master)](https://travis-ci.org/ropenscilabs/crevents)
+[![Build Status](https://travis-ci.org/ropensci/crevents.svg?branch=master)](https://travis-ci.org/ropensci/crevents)
 
 `crevents`  Crossref events data R client
 
@@ -20,7 +20,7 @@ Crossref Events Data docs - <https://www.eventdata.crossref.org/guide/index.html
 
 ```{r eval=FALSE}
 install.packages("devtools")
-devtools::install_github("ropenscilabs/crevents")
+devtools::install_github("ropensci/crevents")
 ```
 
 ```{r}
@@ -42,7 +42,7 @@ x$message$events
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropenscilabs/crevents/issues).
+* Please [report any issues or bugs](https://github.com/ropensci/crevents/issues).
 * License: MIT
 * Get citation information for `crevents` in R doing `citation(package = 'crevents')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

@@ -3,7 +3,7 @@ crevents
 
 
 
-[![Build Status](https://travis-ci.org/ropenscilabs/crevents.svg?branch=master)](https://travis-ci.org/ropenscilabs/crevents)
+[![Build Status](https://travis-ci.org/ropensci/crevents.svg?branch=master)](https://travis-ci.org/ropensci/crevents)
 
 `crevents`  Crossref events data R client
 
@@ -14,7 +14,7 @@ Crossref Events Data docs - <https://www.eventdata.crossref.org/guide/index.html
 
 ```r
 install.packages("devtools")
-devtools::install_github("ropenscilabs/crevents")
+devtools::install_github("ropensci/crevents")
 ```
 
 
@@ -29,20 +29,20 @@ library('crevents')
 cred_query(rows = 10)
 #> $status
 #> [1] "ok"
-#> 
+#>
 #> $`message-type`
 #> [1] "event-list"
-#> 
+#>
 #> $message
 #> $message$`next-cursor`
 #> [1] "355eb688-f526-46a6-9396-993c12cc313c"
-#> 
+#>
 #> $message$`total-results`
 #> [1] 69116172
-#> 
+#>
 #> $message$`items-per-page`
 #> [1] 10
-#> 
+#>
 #> $message$events
 #> # A tibble: 10 x 21
 #>    lice… obj_… sour… occu… subj… id    evid… terms acti… sour… time… rela…
@@ -88,7 +88,7 @@ x$message$events
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropenscilabs/crevents/issues).
+* Please [report any issues or bugs](https://github.com/ropensci/crevents/issues).
 * License: MIT
 * Get citation information for `crevents` in R doing `citation(package = 'crevents')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

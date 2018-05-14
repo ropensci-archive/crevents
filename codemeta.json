@@ -1,20 +1,23 @@
 {
-  "@context": ["http://purl.org/codemeta/2.0", "http://schema.org"],
+  "@context": [
+    "http://purl.org/codemeta/2.0",
+    "http://schema.org"
+  ],
   "@type": "SoftwareSourceCode",
   "identifier": "crevents",
-  "description": "Client for the Crossref Events API \n    <https://www.crossref.org/services/event-data/#the-service>.",
+  "description": "Client for the Crossref Events API\n    <https://www.crossref.org/services/event-data/#the-service>.",
   "name": "crevents: Client for the Crossref Events API",
-  "codeRepository": "https://github.com/ropenscilabs/crevents",
-  "issueTracker": "https://github.com/ropenscilabs/crevents/issues",
+  "codeRepository": "https://github.com/ropensci/crevents",
+  "issueTracker": "https://github.com/ropensci/crevents/issues",
   "license": "https://spdx.org/licenses/MIT",
   "version": "0.0.5.9244",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.4.3",
+    "version": "3.5.0",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.4.3 Patched (2018-01-01 r74017)",
+  "runtimePlatform": "R version 3.5.0 (2018-04-23)",
   "author": [
     {
       "@type": "Person",
@@ -23,12 +26,14 @@
       "email": "myrmecocystus+r@gmail.com"
     }
   ],
-  "maintainer": {
-    "@type": "Person",
-    "givenName": "Scott",
-    "familyName": "Chamberlain",
-    "email": "myrmecocystus+r@gmail.com"
-  },
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Scott",
+      "familyName": "Chamberlain",
+      "email": "myrmecocystus+r@gmail.com"
+    }
+  ],
   "softwareSuggestions": [
     {
       "@type": "SoftwareApplication",
@@ -37,9 +42,10 @@
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
     }
   ],
   "softwareRequirements": [
@@ -47,52 +53,57 @@
       "@type": "SoftwareApplication",
       "identifier": "crul",
       "name": "crul",
-      "version": "0.4.0",
+      "version": ">= 0.4.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=crul"
     },
     {
       "@type": "SoftwareApplication",
       "identifier": "jsonlite",
       "name": "jsonlite",
-      "version": "1.5",
+      "version": ">= 1.5",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=jsonlite"
     },
     {
       "@type": "SoftwareApplication",
       "identifier": "tibble",
       "name": "tibble",
-      "version": "1.2",
+      "version": ">= 1.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=tibble"
     },
     {
       "@type": "SoftwareApplication",
       "identifier": "xml2",
       "name": "xml2",
-      "version": "1.0.0",
+      "version": ">= 1.0.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=xml2"
     }
   ],
   "contIntegration": "https://travis-ci.org/ropenscilabs/crevents",
-  "readme": "https://github.com/ropenscilabs/crevents/blob/master/README.md",
-  "fileSize": "5.303KB"
+  "readme": "https://github.com/ropensci/crevents/blob/master/README.md",
+  "fileSize": "5.301KB",
+  "keywords": ["crossref", "altmetrics", "rstats"]
 }
