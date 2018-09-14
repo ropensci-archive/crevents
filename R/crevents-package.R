@@ -6,6 +6,6 @@
 #' @name crevents-package
 #' @aliases crevents
 #' @docType package
-#' @author Scott Chamberlain \email{myrmecocystus+r@@gmail.com}
+#' @author Scott Chamberlain \email{sckott@@protonmail.com}
 #' @keywords package
 NULL

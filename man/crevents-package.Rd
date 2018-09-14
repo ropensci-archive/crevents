@@ -10,6 +10,6 @@ Documentation for the Crossref Events Data service at
 \url{https://www.eventdata.crossref.org/guide/index.html}
 }
 \author{
-Scott Chamberlain \email{myrmecocystus+r@gmail.com}
+Scott Chamberlain \email{sckott@protonmail.com}
 }
 \keyword{package}
