@@ -16,6 +16,12 @@ knitr::opts_chunk$set(
 
 Crossref Events Data docs - <https://www.eventdata.crossref.org/guide/index.html>
 
+Package API:
+
+- `crev_query()` - `/events` API route
+- `crev_edited()` - `/events/edited` API route
+- `crev_deleted()` - `/events/deleted` API route
+
 ## Installation
 
 ```{r eval=FALSE}

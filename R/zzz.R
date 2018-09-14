@@ -10,12 +10,12 @@ crevents_ua <- function() {
   paste0(versions, collapse = " ")
 }
 
-crev_GET <- function(args, ...) {
+crev_GET <- function(endpoint, args, ...) {
   cli <- crul::HttpClient$new(
     url = cred_base(),
     opts = list(useragent = crevents_ua())
   )
-  temp <- cli$get("v1/events", query = args, ...)
+  temp <- cli$get(file.path("v1", endpoint), query = args, ...)
   if (temp$status_code > 201) {
     tt <- temp$parse("UTF-8")
     res <- jsonlite::fromJSON(tt, FALSE)

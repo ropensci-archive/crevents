@@ -9,6 +9,12 @@ crevents
 
 Crossref Events Data docs - <https://www.eventdata.crossref.org/guide/index.html>
 
+Package API:
+
+- `crev_query()` - `/events` API route
+- `crev_edited()` - `/events/edited` API route
+- `crev_deleted()` - `/events/deleted` API route
+
 ## Installation
 
 
@@ -38,7 +44,7 @@ crev_query(rows = 10)
 #> [1] "7956fb94-9edb-4106-9e57-ac15eec67b60"
 #> 
 #> $message$`total-results`
-#> [1] 104717652
+#> [1] 104721652
 #> 
 #> $message$`items-per-page`
 #> [1] 10
