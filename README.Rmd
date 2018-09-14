@@ -30,13 +30,13 @@ library('crevents')
 ## query
 
 ```{r}
-cred_query(rows = 10)
+crev_query(rows = 10)
 ```
 
 Limit to events from Reddit
 
 ```{r}
-x <- cred_query(rows = 10, filter = list(source = "reddit"))
+x <- crev_query(rows = 10, filter = list(source = "reddit"))
 x$message$events
 ```
 

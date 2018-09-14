@@ -1,4 +1,4 @@
-cred_base <- function() "http://%s.eventdata.crossref.org/events"
+cred_base <- function() "https://api.eventdata.crossref.org"
 
 cmp <- function(x) Filter(Negate(is.null), x)
 
@@ -10,19 +10,12 @@ crevents_ua <- function() {
   paste0(versions, collapse = " ")
 }
 
-# make_cr_ua <- function() {
-#   c(
-#     httr::user_agent(crevents_ua()),
-#     httr::add_headers(`X-USER-AGENT` = crevents_ua())
-#   )
-# }
-
-crev_GET <- function(x, args, ...) {
+crev_GET <- function(args, ...) {
   cli <- crul::HttpClient$new(
-    url = x,
+    url = cred_base(),
     opts = list(useragent = crevents_ua())
   )
-  temp <- cli$get(query = args, ...)
+  temp <- cli$get("v1/events", query = args, ...)
   if (temp$status_code > 201) {
     tt <- temp$parse("UTF-8")
     res <- jsonlite::fromJSON(tt, FALSE)
