@@ -9,7 +9,7 @@ Authors@R: c(
       email = "sckott@protonmail.com", 
       comment = c(ORCID = "0000-0003-1444-9135"))
     )
-URL: https://github.com/ropensci/crevents
+URL: https://docs.ropensci.org/crevents, https://github.com/ropensci/crevents
 BugReports: https://github.com/ropensci/crevents/issues
 LazyData: true
 Roxygen: list(markdown = TRUE)
