@@ -4,15 +4,32 @@
 \alias{crev_deleted}
 \title{Query Crossref Deleted Events data}
 \usage{
-crev_deleted(rows = 1000L, cursor = NULL, source = NULL,
-  from_updated_date = NULL, until_updated_date = NULL,
-  from_collected_date = NULL, until_collected_date = NULL,
-  from_occurred_date = NULL, until_occurred_date = NULL,
-  obj_id = NULL, obj_id_prefix = NULL, subj_id = NULL,
-  subj_id_prefix = NULL, subj_id_domain = NULL, obj_id_domain = NULL,
-  subj_url = NULL, obj_url = NULL, subj_url_domain = NULL,
-  obj_url_domain = NULL, subj_alternative_id = NULL,
-  obj_alternative_id = NULL, relation = NULL, facet = NULL, ...)
+crev_deleted(
+  rows = 1000L,
+  cursor = NULL,
+  source = NULL,
+  from_updated_date = NULL,
+  until_updated_date = NULL,
+  from_collected_date = NULL,
+  until_collected_date = NULL,
+  from_occurred_date = NULL,
+  until_occurred_date = NULL,
+  obj_id = NULL,
+  obj_id_prefix = NULL,
+  subj_id = NULL,
+  subj_id_prefix = NULL,
+  subj_id_domain = NULL,
+  obj_id_domain = NULL,
+  subj_url = NULL,
+  obj_url = NULL,
+  subj_url_domain = NULL,
+  obj_url_domain = NULL,
+  subj_alternative_id = NULL,
+  obj_alternative_id = NULL,
+  relation = NULL,
+  facet = NULL,
+  ...
+)
 }
 \arguments{
 \item{rows}{(character) the number of Events you want to retrieve per page.

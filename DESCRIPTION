@@ -1,12 +1,12 @@
 Package: crevents
 Title: Client for the 'Crossref' Events API
 Description: Client for the 'Crossref' Events API
-    <https://www.crossref.org/services/event-data/#the-service>.
-Version: 0.0.6.9100
+    <https://www.eventdata.crossref.org/guide/>.
+Version: 0.0.6.92
 License: MIT + file LICENSE
 Authors@R: c(
     person("Scott", "Chamberlain", role = c("aut", "cre"),
-      email = "sckott@protonmail.com", 
+      email = "sckott@protonmail.com",
       comment = c(ORCID = "0000-0003-1444-9135"))
     )
 URL: https://github.com/ropensci/crevents
@@ -21,5 +21,6 @@ Imports:
     tibble (>= 1.2),
     xml2 (>= 1.0.0)
 Suggests:
-    testthat
-RoxygenNote: 6.1.0
+    testthat,
+    vcr
+RoxygenNote: 7.0.2
