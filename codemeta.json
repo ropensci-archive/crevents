@@ -100,9 +100,9 @@
       "sameAs": "https://CRAN.R-project.org/package=tibble"
     }
   ],
-  "contIntegration": "https://travis-ci.org/ropensci/crevents",
+  "contIntegration": ["https://travis-ci.org/ropensci/crevents", "https://ci.appveyor.com/project/sckott/crevents"],
   "readme": "https://github.com/ropensci/crevents/blob/master/README.md",
-  "fileSize": "11.931KB",
+  "fileSize": "12.017KB",
   "keywords": ["text-ming", "literature", "scholarly", "publications", "citations", "events", "Crossref", "tweets", "crossref", "altmetrics", "rstats", "r", "r-package"],
   "relatedLink": "https://docs.ropensci.org/crevents",
   "contributor": {},
