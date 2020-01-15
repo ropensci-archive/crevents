@@ -2,7 +2,7 @@ Package: crevents
 Title: Client for the 'Crossref' Events API
 Description: Client for the 'Crossref' Events API
     <https://www.eventdata.crossref.org/guide/>.
-Version: 0.0.7.92
+Version: 0.1.0
 License: MIT + file LICENSE
 Authors@R: c(
     person("Scott", "Chamberlain", role = c("aut", "cre"),
@@ -23,3 +23,6 @@ Suggests:
     testthat,
     vcr
 RoxygenNote: 7.0.2
+X-schema.org-applicationCategory: Literature
+X-schema.org-keywords: text-ming, literature, scholarly, publications, citations, events, Crossref, tweets
+X-schema.org-isPartOf: https://ropensci.org

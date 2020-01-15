@@ -6,7 +6,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: r-curl/4.3 crul/0.9.0 rOpenSci(crevents/0.0.7.92)
+      User-Agent: r-curl/4.3 crul/0.9.0 rOpenSci(crevents/0.1.0)
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -20,14 +20,14 @@ http_interactions:
       access-control-allow-origin: '*'
       content-length: '104'
       server: http-kit
-      date: Wed, 15 Jan 2020 01:40:18 GMT
+      date: Wed, 15 Jan 2020 02:26:42 GMT
     body:
       encoding: UTF-8
       file: no
       string: '{"status":"failed","message-type":null,"message":[{"type":null,"message":"For
         input string: \"asdf\""}]}'
-  recorded_at: 2020-01-15 01:40:20 GMT
-  recorded_with: vcr/0.4.1.93, webmockr/0.5.1.96
+  recorded_at: 2020-01-15 02:26:44 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
 - request:
     method: get
     uri: https://api.eventdata.crossref.org/v1/events/edited?rows=1000&from-updated-date=stuff&mailto=myrmecocystus%40gmail.com
@@ -35,7 +35,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: r-curl/4.3 crul/0.9.0 rOpenSci(crevents/0.0.7.92)
+      User-Agent: r-curl/4.3 crul/0.9.0 rOpenSci(crevents/0.1.0)
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -49,14 +49,14 @@ http_interactions:
       access-control-allow-origin: '*'
       content-length: '187'
       server: http-kit
-      date: Wed, 15 Jan 2020 01:40:19 GMT
+      date: Wed, 15 Jan 2020 02:26:43 GMT
     body:
       encoding: UTF-8
       file: no
       string: '{"status":"failed","message-type":"validation-failure","message":[{"type":"invalid-date","message":"Date
         format suplied to from-updated-date incorrect. Expected YYYY-MM-DD, got: stuff"}]}'
-  recorded_at: 2020-01-15 01:40:20 GMT
-  recorded_with: vcr/0.4.1.93, webmockr/0.5.1.96
+  recorded_at: 2020-01-15 02:26:44 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
 - request:
     method: get
     uri: https://api.eventdata.crossref.org/v1/events/edited?rows=1000&cursor=asdfadf&mailto=myrmecocystus%40gmail.com
@@ -64,7 +64,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: r-curl/4.3 crul/0.9.0 rOpenSci(crevents/0.0.7.92)
+      User-Agent: r-curl/4.3 crul/0.9.0 rOpenSci(crevents/0.1.0)
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -78,11 +78,11 @@ http_interactions:
       access-control-allow-origin: '*'
       content-length: '102'
       server: http-kit
-      date: Wed, 15 Jan 2020 01:40:20 GMT
+      date: Wed, 15 Jan 2020 02:26:44 GMT
     body:
       encoding: UTF-8
       file: no
       string: '{"status":"failed","message-type":null,"message":[{"type":null,"message":"Invalid
         cursor supplied."}]}'
-  recorded_at: 2020-01-15 01:40:20 GMT
-  recorded_with: vcr/0.4.1.93, webmockr/0.5.1.96
+  recorded_at: 2020-01-15 02:26:44 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
