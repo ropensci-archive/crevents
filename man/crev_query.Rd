@@ -110,7 +110,7 @@ the same as the obj_id.
 
 \examples{
 \dontrun{
-(res <- crev_query(rows = 10))
+(res <- crev_query(rows = 4))
 res$status
 res$`message-type`
 res$message$`total-results`
@@ -123,17 +123,13 @@ res$message$events$`subj.original-tweet-url`
 crev_query(rows = 10, source = "reddit")
 crev_query(rows = 10, source = "twitter")
 
-# on the first of March 2017s
+# on the first of March 2017
 crev_query(rows=10, from_collected_date = "2017-03-01", 
   until_collected_date = "2017-03-01")
   
 # in the month of March 2017
 crev_query(rows=10, from_occurred_date = "2017-03-01", 
   until_occurred_date = "2017-03-31")
-  
-# in the month of March 2017
-crev_query(rows=10, from_collected_date = "2017-03-01",
-  until_collected_date = "2017-03-31")
   
 # Up to ten Events for a DOI prefix
 crev_query(rows = 10, obj_id_prefix = "10.1186")

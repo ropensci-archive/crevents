@@ -36,22 +36,6 @@ no_res_result <- function(x) {
   )  
 }
 
-# handle_errors <- function(x) {
-#   if (x$status_code > 201) {
-#     tmp <- x$parse("UTF-8")
-#     html <- xml2::read_html(tmp)
-#     mssg <- paste(
-#       xml2::xml_text(xml2::xml_find_first(html, "//li[contains(text(),'Code:')]")),
-#       xml2::xml_text(xml2::xml_find_first(html, "//li[contains(text(),'Message:')]")),
-#       sep = "\n       "
-#     )
-#     warning(mssg, call. = FALSE)
-#     return(FALSE)
-#   } else {
-#     return(TRUE)
-#   }
-# }
-
 pluck <- function(x, name, type) {
   if (missing(type)) {
     lapply(x, "[[", name)
@@ -91,7 +75,7 @@ asl <- function(z) {
 
 set_df <- function(x) {
   if (NROW(x) != 0) {
-    x$message$events <- tibble::as_data_frame(x$message$events)
+    x$message$events <- tibble::as_tibble(x$message$events)
   }
   return(x)
 }
@@ -103,3 +87,11 @@ make_paths <- function(type, date, source, work) {
   gsub("//", "/", gsub("/+$", "", file.path(da_te, wo_rk, sou_rce)))
 }
 
+assert <- function(x, y) {
+  if (!is.null(x)) {
+    if (!inherits(x, y)) {
+      stop(deparse(substitute(x)), " must be of class ",
+        paste0(y, collapse = ", "), call. = FALSE)
+    }
+  }
+}

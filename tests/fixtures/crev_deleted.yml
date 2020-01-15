@@ -1,0 +1,30 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://api.eventdata.crossref.org/v1/events/deleted?rows=3&mailto=myrmecocystus%40gmail.com
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: r-curl/4.3 crul/0.9.0 rOpenSci(crevents/0.0.7.92)
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json;charset=UTF-8
+      vary: Accept
+      access-control-allow-origin: '*'
+      content-length: '2156'
+      server: http-kit
+      date: Wed, 15 Jan 2020 01:38:23 GMT
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"status":"ok","message-type":"event-list","message":{"next-cursor":"8cf14c81-32cd-4731-940d-40f3b1cc9502","total-results":19614420,"items-per-page":3,"events":[{"license":"https:\/\/creativecommons.org\/publicdomain\/zero\/1.0\/","updated_reason":"https:\/\/evidence.eventdata.crossref.org\/announcements\/2017-05-08T08-41-00Z-CED-9.json","updated":"deleted","obj_id":"https:\/\/doi.org\/10.1038\/534166a","source_token":"c294f65c-33df-11e6-ac61-9e71128cae77","occurred_at":"2016-06-16T17:38:46Z","experimental":true,"subj_id":"http:\/\/twitter.com","total":1,"id":"d184960d-3026-43e8-ac71-61d24e713638","terms":"https:\/\/doi.org\/10.13003\/CED-terms-of-use","message_action":"create","source_id":"twitter","obj":{},"timestamp":"2016-06-16T17:38:46Z","updated_date":"2017-05-08T14:10:53Z","relation_type_id":"discusses"},{"license":"https:\/\/creativecommons.org\/publicdomain\/zero\/1.0\/","updated_reason":"https:\/\/evidence.eventdata.crossref.org\/announcements\/2017-05-08T08-41-00Z-CED-9.json","updated":"deleted","obj_id":"https:\/\/doi.org\/10.1001\/jama.2016.6458","source_token":"c294f65c-33df-11e6-ac61-9e71128cae77","occurred_at":"2016-06-16T17:38:47Z","experimental":true,"subj_id":"http:\/\/twitter.com","total":1,"id":"e5ae7d9f-2ada-4df7-bebe-1ddfd226af76","terms":"https:\/\/doi.org\/10.13003\/CED-terms-of-use","message_action":"create","source_id":"twitter","obj":{},"timestamp":"2016-06-16T17:38:47Z","updated_date":"2017-05-08T15:27:56Z","relation_type_id":"discusses"},{"license":"https:\/\/creativecommons.org\/publicdomain\/zero\/1.0\/","updated_reason":"https:\/\/evidence.eventdata.crossref.org\/announcements\/2017-05-08T08-41-00Z-CED-9.json","updated":"deleted","obj_id":"https:\/\/doi.org\/10.1038\/533452a","source_token":"c294f65c-33df-11e6-ac61-9e71128cae77","occurred_at":"2016-06-16T17:38:48Z","experimental":true,"subj_id":"http:\/\/twitter.com","total":1,"id":"8cf14c81-32cd-4731-940d-40f3b1cc9502","terms":"https:\/\/doi.org\/10.13003\/CED-terms-of-use","message_action":"create","source_id":"twitter","obj":{},"timestamp":"2016-06-16T17:38:48Z","updated_date":"2017-05-08T20:30:23Z","relation_type_id":"discusses"}]}}'
+  recorded_at: 2020-01-15 01:38:23 GMT
+  recorded_with: vcr/0.4.1.93, webmockr/0.5.1.96

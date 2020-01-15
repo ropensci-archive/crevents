@@ -1,9 +1,9 @@
 context("crev_query: works")
 
-test_that("single date, across all sources", {
-  skip_on_cran()
-
-  aa <- crev_query(rows = 10)
+test_that("crev_query", {
+  vcr::use_cassette("crev_query", {
+    aa <- crev_query(rows = 10)
+  })
 
   expect_is(aa, "list")
   expect_equal(aa$status, "ok")
@@ -18,15 +18,18 @@ test_that("single date, across all sources", {
 
 context("crev_query: fails well")
 test_that("crev_query fails well", {
-  skip_on_cran()
-
-  expect_error(crev_query(rows = "asdf"), "For input string: \"asdf\"")
-  expect_error(crev_query(from_updated_date = "stuff"), 
-    "Date format suplied to from-updated-date incorrect. Expected YYYY-MM-DD, got: stuff")
-  expect_error(crev_query(cursor = "asdfadf"), "Invalid cursor supplied")
-
-  # FIXME: this used to fail - but no I guess silently drops the param?
-  # expect_error(crev_query(from_updated_date = '2016-08-xx'),
-  #   "to from-updated-date incorrect"
-  # )
+  vcr::use_cassette("crev_query_fails", {
+    expect_error(crev_query(rows = "asdf"), "For input string: \"asdf\"",
+      class = "error")
+    expect_error(crev_query(from_updated_date = "stuff"), 
+      "Date format suplied to from-updated-date incorrect. Expected YYYY-MM-DD, got: stuff",
+      class = "error")
+    expect_error(crev_query(cursor = "asdfadf"), "Invalid cursor supplied",
+      class = "error")
+  })
 })
+
+# FIXME: this used to fail - but no I guess silently drops the param?
+# expect_error(crev_query(from_updated_date = '2016-08-xx'),
+#   "to from-updated-date incorrect"
+# )

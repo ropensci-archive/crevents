@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://api.eventdata.crossref.org/v1/events/edited?rows=3&mailto=myrmecocystus%40gmail.com
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: r-curl/4.3 crul/0.9.0 rOpenSci(crevents/0.0.7.92)
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      content-type: application/json;charset=UTF-8
+      vary: Accept
+      access-control-allow-origin: '*'
+      content-length: '3719'
+      server: http-kit
+      date: Wed, 15 Jan 2020 01:40:18 GMT
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"status":"ok","message-type":"event-list","message":{"next-cursor":"68fb09a4-fb4b-492c-bce2-71f3e8880e4c","total-results":23117098,"items-per-page":3,"events":[{"license":"https:\/\/creativecommons.org\/publicdomain\/zero\/1.0\/","terms":"https:\/\/doi.org\/10.13003\/CED-terms-of-use","updated_reason":"https:\/\/evidence.eventdata.crossref.org\/announcements\/2018-04-26T00-00-00Z-ED-16.json","updated":"edited","obj_id":"https:\/\/doi.org\/10.1098\/rspb.2016.0792","source_token":"45a1ef76-4f43-4cdc-9ba8-5a6ad01cc231","occurred_at":"2017-02-17T09:17:34Z","subj_id":"http:\/\/twitter.com\/PaulKiem\/statuses\/832519346811310080","id":"90dd1736-e4cc-4955-a9b4-6f5e18421348","evidence_record":"https:\/\/evidence.eventdata.crossref.org\/evidence\/20170217f49152d6-b592-4320-a927-ee514d41600a","terms":"https:\/\/doi.org\/10.13003\/CED-terms-of-use","action":"add","subj":{"pid":"http:\/\/twitter.com\/PaulKiem\/statuses\/832519346811310080","title":"Tweet
+        832519346811310080","issued":"2017-02-17T09:17:34.000Z","author":{"url":"http:\/\/www.twitter.com\/PaulKiem"},"original-tweet-url":"http:\/\/twitter.com\/ScholarsLeague\/statuses\/832196260924841989","original-tweet-author":"http:\/\/www.twitter.com\/ScholarsLeague","alternative-id":"832519346811310080"},"source_id":"twitter","obj":{"pid":"https:\/\/doi.org\/10.1098\/rspb.2016.0792","url":"https:\/\/doi.org\/10.1098\/rspb.2016.0792"},"timestamp":"2017-02-17T12:20:02Z","updated_date":"2018-05-02T17:15:40Z","relation_type_id":"discusses"},{"license":"https:\/\/creativecommons.org\/publicdomain\/zero\/1.0\/","terms":"https:\/\/doi.org\/10.13003\/CED-terms-of-use","updated_reason":"https:\/\/evidence.eventdata.crossref.org\/announcements\/2018-04-26T00-00-00Z-ED-16.json","updated":"edited","obj_id":"https:\/\/doi.org\/10.1136\/bmj.j456","source_token":"45a1ef76-4f43-4cdc-9ba8-5a6ad01cc231","occurred_at":"2017-02-17T09:17:08Z","subj_id":"http:\/\/twitter.com","id":"2af8b4de-76c6-44b5-baad-a358f1d915fc","evidence_record":"https:\/\/evidence.eventdata.crossref.org\/evidence\/20170217a22ec0a8-e5eb-47e5-ba6f-f24bdd9ea7d8","terms":"https:\/\/doi.org\/10.13003\/CED-terms-of-use","action":"add","source_id":"twitter","obj":{"pid":"https:\/\/doi.org\/10.1136\/bmj.j456","url":"https:\/\/doi.org\/10.1136\/bmj.j456"},"timestamp":"2017-02-17T12:20:03Z","updated_date":"2018-05-09T17:41:23Z","relation_type_id":"discusses"},{"license":"https:\/\/creativecommons.org\/publicdomain\/zero\/1.0\/","terms":"https:\/\/doi.org\/10.13003\/CED-terms-of-use","updated_reason":"https:\/\/evidence.eventdata.crossref.org\/announcements\/2018-04-26T00-00-00Z-ED-16.json","updated":"edited","obj_id":"https:\/\/doi.org\/10.1038\/nbt.3722","source_token":"45a1ef76-4f43-4cdc-9ba8-5a6ad01cc231","occurred_at":"2017-02-17T09:17:05Z","subj_id":"http:\/\/twitter.com\/DocSchueller\/statuses\/832519226959224833","id":"68fb09a4-fb4b-492c-bce2-71f3e8880e4c","evidence_record":"https:\/\/evidence.eventdata.crossref.org\/evidence\/2017021752bcaf0b-b467-4839-9ea2-ece749bf98c0","terms":"https:\/\/doi.org\/10.13003\/CED-terms-of-use","action":"add","subj":{"pid":"http:\/\/twitter.com\/DocSchueller\/statuses\/832519226959224833","title":"Tweet
+        832519226959224833","issued":"2017-02-17T09:17:05.000Z","author":{"url":"http:\/\/www.twitter.com\/DocSchueller"},"original-tweet-url":"http:\/\/twitter.com\/NatureBiotech\/statuses\/806728988227842048","original-tweet-author":"http:\/\/www.twitter.com\/NatureBiotech","alternative-id":"832519226959224833"},"source_id":"twitter","obj":{"pid":"https:\/\/doi.org\/10.1038\/nbt.3722","url":"https:\/\/doi.org\/10.1038\/nbt.3722"},"timestamp":"2017-02-17T12:20:04Z","updated_date":"2018-05-03T09:18:54Z","relation_type_id":"discusses"}]}}'
+  recorded_at: 2020-01-15 01:40:18 GMT
+  recorded_with: vcr/0.4.1.93, webmockr/0.5.1.96

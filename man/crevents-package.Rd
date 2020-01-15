@@ -7,7 +7,8 @@
 \title{Client for the Crossref Events API}
 \description{
 Documentation for the Crossref Events Data service at
-\url{https://www.eventdata.crossref.org/guide/index.html}
+\url{https://www.eventdata.crossref.org/guide/index.html} and
+\url{https://www.eventdata.crossref.org/guide/}
 }
 \author{
 Scott Chamberlain \email{sckott@protonmail.com}

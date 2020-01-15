@@ -1,0 +1,88 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://api.eventdata.crossref.org/v1/events/deleted?rows=asdf&mailto=myrmecocystus%40gmail.com
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: r-curl/4.3 crul/0.9.0 rOpenSci(crevents/0.0.7.92)
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '400'
+      message: Bad Request
+      explanation: Bad request syntax or unsupported method
+    headers:
+      status: HTTP/1.1 400 Bad Request
+      content-type: text/plain;charset=UTF-8
+      access-control-allow-origin: '*'
+      content-length: '104'
+      server: http-kit
+      date: Wed, 15 Jan 2020 01:38:23 GMT
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"status":"failed","message-type":null,"message":[{"type":null,"message":"For
+        input string: \"asdf\""}]}'
+  recorded_at: 2020-01-15 01:38:25 GMT
+  recorded_with: vcr/0.4.1.93, webmockr/0.5.1.96
+- request:
+    method: get
+    uri: https://api.eventdata.crossref.org/v1/events/deleted?rows=1000&from-updated-date=stuff&mailto=myrmecocystus%40gmail.com
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: r-curl/4.3 crul/0.9.0 rOpenSci(crevents/0.0.7.92)
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '400'
+      message: Bad Request
+      explanation: Bad request syntax or unsupported method
+    headers:
+      status: HTTP/1.1 400 Bad Request
+      content-type: text/plain;charset=UTF-8
+      access-control-allow-origin: '*'
+      content-length: '187'
+      server: http-kit
+      date: Wed, 15 Jan 2020 01:38:24 GMT
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"status":"failed","message-type":"validation-failure","message":[{"type":"invalid-date","message":"Date
+        format suplied to from-updated-date incorrect. Expected YYYY-MM-DD, got: stuff"}]}'
+  recorded_at: 2020-01-15 01:38:25 GMT
+  recorded_with: vcr/0.4.1.93, webmockr/0.5.1.96
+- request:
+    method: get
+    uri: https://api.eventdata.crossref.org/v1/events/deleted?rows=1000&cursor=asdfadf&mailto=myrmecocystus%40gmail.com
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: r-curl/4.3 crul/0.9.0 rOpenSci(crevents/0.0.7.92)
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '400'
+      message: Bad Request
+      explanation: Bad request syntax or unsupported method
+    headers:
+      status: HTTP/1.1 400 Bad Request
+      content-type: text/plain;charset=UTF-8
+      access-control-allow-origin: '*'
+      content-length: '102'
+      server: http-kit
+      date: Wed, 15 Jan 2020 01:38:25 GMT
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"status":"failed","message-type":null,"message":[{"type":null,"message":"Invalid
+        cursor supplied."}]}'
+  recorded_at: 2020-01-15 01:38:25 GMT
+  recorded_with: vcr/0.4.1.93, webmockr/0.5.1.96

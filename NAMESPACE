@@ -2,4 +2,5 @@
 
 export(crev_deleted)
 export(crev_edited)
+export(crev_evrecs)
 export(crev_query)
