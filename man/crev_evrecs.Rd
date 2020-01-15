@@ -25,7 +25,7 @@ to data.frame's is an exercise left to the user
 From \code{\link[=crev_query]{crev_query()}} you will get  urls like
 "https://evidence.eventdata.crossref.org/evidence" in the
 \verb{$message$events$evidence_record} slot of results. These links
-hold JSOn data with the evidence record details for the record. This
+hold JSON data with the evidence record details for the record. This
 function simply retrieves that JSON and parses to a list
 }
 \examples{
