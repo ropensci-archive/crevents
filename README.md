@@ -6,6 +6,7 @@ crevents
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 [![Build Status](https://travis-ci.org/ropensci/crevents.svg?branch=master)](https://travis-ci.org/ropensci/crevents)
+[![Build status](https://ci.appveyor.com/api/projects/status/1a17vr2045iygx8f?svg=true)](https://ci.appveyor.com/project/sckott/crevents)
 
 `crevents`  Crossref events data R client
 
@@ -44,7 +45,7 @@ library('crevents')
 
 
 ```r
-crev_query(rows = 10)
+crev_query(rows = 3)
 #> $status
 #> [1] "ok"
 #> 
@@ -53,28 +54,21 @@ crev_query(rows = 10)
 #> 
 #> $message
 #> $message$`next-cursor`
-#> [1] "7956fb94-9edb-4106-9e57-ac15eec67b60"
+#> [1] "68fb09a4-fb4b-492c-bce2-71f3e8880e4c"
 #> 
 #> $message$`total-results`
-#> [1] 441533755
+#> [1] 441555734
 #> 
 #> $message$`items-per-page`
-#> [1] 10
+#> [1] 3
 #> 
 #> $message$events
-#> # A tibble: 10 x 24
-#>    license terms updated_reason updated obj_id source_token occurred_at subj_id
-#>    <chr>   <chr> <chr>          <chr>   <chr>  <chr>        <chr>       <chr>  
-#>  1 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
-#>  2 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
-#>  3 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
-#>  4 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
-#>  5 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
-#>  6 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
-#>  7 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
-#>  8 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
-#>  9 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
-#> 10 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
+#> # A tibble: 3 x 24
+#>   license terms updated_reason updated obj_id source_token occurred_at subj_id
+#>   <chr>   <chr> <chr>          <chr>   <chr>  <chr>        <chr>       <chr>  
+#> 1 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
+#> 2 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
+#> 3 https:… http… https://evide… edited  https… 45a1ef76-4f… 2017-02-17… http:/…
 #> # … with 16 more variables: id <chr>, evidence_record <chr>, action <chr>,
 #> #   source_id <chr>, timestamp <chr>, updated_date <chr>,
 #> #   relation_type_id <chr>, subj.pid <chr>, subj.title <chr>,
@@ -87,21 +81,14 @@ Limit to events from Reddit
 
 
 ```r
-x <- crev_query(rows = 10, source = "reddit")
+x <- crev_query(rows = 3, source = "reddit")
 x$message$events
-#> # A tibble: 10 x 18
-#>    license obj_id source_token occurred_at subj_id id    evidence_record terms
-#>    <chr>   <chr>  <chr>        <chr>       <chr>   <chr> <chr>           <chr>
-#>  1 https:… https… a6c9d511-92… 2016-01-16… https:… e37e… https://eviden… http…
-#>  2 https:… https… a6c9d511-92… 2016-09-13… https:… c831… https://eviden… http…
-#>  3 https:… https… a6c9d511-92… 2016-01-14… https:… 783b… https://eviden… http…
-#>  4 https:… https… a6c9d511-92… 2016-09-13… https:… 61ce… https://eviden… http…
-#>  5 https:… https… a6c9d511-92… 2014-09-14… https:… f0aa… https://eviden… http…
-#>  6 https:… https… a6c9d511-92… 2014-09-12… https:… ca49… https://eviden… http…
-#>  7 https:… https… a6c9d511-92… 2014-11-26… https:… c809… https://eviden… http…
-#>  8 https:… https… a6c9d511-92… 2014-09-11… https:… bdfe… https://eviden… http…
-#>  9 https:… https… a6c9d511-92… 2014-09-14… https:… 8412… https://eviden… http…
-#> 10 https:… https… a6c9d511-92… 2016-01-13… https:… 3c49… https://eviden… http…
+#> # A tibble: 3 x 18
+#>   license obj_id source_token occurred_at subj_id id    evidence_record terms
+#>   <chr>   <chr>  <chr>        <chr>       <chr>   <chr> <chr>           <chr>
+#> 1 https:… https… a6c9d511-92… 2016-01-16… https:… e37e… https://eviden… http…
+#> 2 https:… https… a6c9d511-92… 2016-09-13… https:… c831… https://eviden… http…
+#> 3 https:… https… a6c9d511-92… 2016-01-14… https:… 783b… https://eviden… http…
 #> # … with 10 more variables: action <chr>, source_id <chr>, timestamp <chr>,
 #> #   relation_type_id <chr>, subj.pid <chr>, subj.type <chr>, subj.title <chr>,
 #> #   subj.issued <chr>, obj.pid <chr>, obj.url <chr>
@@ -112,6 +99,8 @@ x$message$events
 * Please [report any issues or bugs](https://github.com/ropensci/crevents/issues).
 * License: MIT
 * Get citation information for `crevents` in R doing `citation(package = 'crevents')`
-* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct][coc]. By participating in this project you agree to abide by its terms.
 
 [![ropensci_footer](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
+
+[coc]: https://github.com/ropensci/crevents/blob/master/CODE_OF_CONDUCT.md
