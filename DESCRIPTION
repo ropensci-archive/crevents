@@ -1,7 +1,10 @@
 Package: crevents
 Title: Client for the 'Crossref' Events API
 Description: Client for the 'Crossref' Events API
-    <https://www.eventdata.crossref.org/guide/>.
+    <https://www.eventdata.crossref.org/guide/>. The 'Crossref'
+    Events service captures discussion of scholarly works (e.g.,
+    peer-reviewed publications) in non-traditional places such
+    as blogs and social media.
 Version: 0.1.0
 License: MIT + file LICENSE
 Authors@R: c(
@@ -24,5 +27,6 @@ Suggests:
     vcr
 RoxygenNote: 7.0.2
 X-schema.org-applicationCategory: Literature
-X-schema.org-keywords: text-ming, literature, scholarly, publications, citations, events, Crossref, tweets
+X-schema.org-keywords: text-ming, literature, scholarly, publications,
+citations, events, Crossref, tweets
 X-schema.org-isPartOf: https://ropensci.org
