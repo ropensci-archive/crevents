@@ -10,19 +10,30 @@ knitr::opts_chunk$set(
 )
 ```
 
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 [![Build Status](https://travis-ci.org/ropensci/crevents.svg?branch=master)](https://travis-ci.org/ropensci/crevents)
 
 `crevents`  Crossref events data R client
 
-Crossref Events Data docs - <https://www.eventdata.crossref.org/guide/index.html>
+Crossref Events Data docs - <https://www.eventdata.crossref.org/guide/>
 
 Package API:
 
 - `crev_query()` - `/events` API route
 - `crev_edited()` - `/events/edited` API route
 - `crev_deleted()` - `/events/deleted` API route
+- `crev_evrecs()` - helper to fetch evidence records JSON payloads
 
 ## Installation
+
+stable version
+
+```{r eval=FALSE}
+install.packages("crevents")
+```
+
+development version
 
 ```{r eval=FALSE}
 install.packages("devtools")
