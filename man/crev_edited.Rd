@@ -118,16 +118,16 @@ the same as the obj_id.
 }
 
 \examples{
-\dontrun{
-(res <- crev_edited(rows = 10))
+if (crul::ok("http://api.eventdata.crossref.org/v1/events?rows=0")) {
+res <- crev_edited(rows = 3)
 res$status
 res$`message-type`
 res$message$`total-results`
 res$message$`items-per-page`
 res$message$events
-res$message$events$obj.url
-res$message$events$`subj.original-tweet-url`
+}
 
+\dontrun{
 # filter with source
 crev_edited(rows = 10, source = "reddit")
 crev_edited(rows = 10, source = "twitter")

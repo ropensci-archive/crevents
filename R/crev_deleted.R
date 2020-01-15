@@ -2,7 +2,8 @@
 #' 
 #' @export
 #' @inherit crev_query
-#' @examples \dontrun{
+#' @examples 
+#' if (crul::ok("http://api.eventdata.crossref.org/v1/events?rows=0")) {
 #' (res <- crev_deleted(rows = 3))
 #' res$status
 #' res$`message-type`
@@ -10,7 +11,9 @@
 #' res$message$`items-per-page`
 #' res$message$events
 #' res$message$events$obj_id
+#' }
 #' 
+#' \dontrun{
 #' # filter with source
 #' crev_deleted(rows = 3, source = "reddit")
 #' crev_deleted(rows = 3, source = "twitter")
