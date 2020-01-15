@@ -1,6 +1,7 @@
 context("crev_query: works")
 
 test_that("crev_query", {
+  skip_on_cran()
   vcr::use_cassette("crev_query", {
     aa <- crev_query(rows = 10)
   })
@@ -18,6 +19,7 @@ test_that("crev_query", {
 
 context("crev_query: fails well")
 test_that("crev_query fails well", {
+  skip_on_cran()
   vcr::use_cassette("crev_query_fails", {
     expect_error(crev_query(rows = "asdf"), "For input string: \"asdf\"",
       class = "error")

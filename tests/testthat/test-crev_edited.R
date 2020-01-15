@@ -1,6 +1,7 @@
 context("crev_edited: works")
 
 test_that("crev_edited", {
+  skip_on_cran()
   vcr::use_cassette("crev_edited", {
     aa <- crev_edited(rows = 3)
   })
@@ -18,6 +19,7 @@ test_that("crev_edited", {
 
 context("crev_edited: fails well")
 test_that("crev_edited fails well", {
+  skip_on_cran()
   vcr::use_cassette("crev_edited_fails", {
     expect_error(crev_edited(rows = "asdf"), "For input string: \"asdf\"",
       class = "error")

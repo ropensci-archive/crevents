@@ -9,7 +9,7 @@ Version: 0.1.0
 License: MIT + file LICENSE
 Authors@R: c(
     person("Scott", "Chamberlain", role = c("aut", "cre"),
-      email = "sckott@protonmail.com",
+      email = "myrmecocystus@gmail.com",
       comment = c(ORCID = "0000-0003-1444-9135"))
     )
 URL: https://docs.ropensci.org/crevents, https://github.com/ropensci/crevents

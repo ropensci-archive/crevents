@@ -1,6 +1,7 @@
 context("crev_deleted: works")
 
 test_that("crev_deleted", {
+  skip_on_cran()
   vcr::use_cassette("crev_deleted", {
     aa <- crev_deleted(rows = 3)
   })
@@ -19,6 +20,7 @@ test_that("crev_deleted", {
 context("crev_deleted: fails well")
 test_that("crev_deleted fails well", {
   vcr::use_cassette("crev_deleted_fails", {
+    skip_on_cran()
     expect_error(crev_deleted(rows = "asdf"), "For input string: \"asdf\"",
       class = "error")
     expect_error(crev_deleted(from_updated_date = "stuff"), 
