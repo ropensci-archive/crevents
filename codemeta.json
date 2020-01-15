@@ -5,25 +5,26 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "crevents",
-  "description": "Client for the Crossref Events API\n    <https://www.crossref.org/services/event-data/#the-service>.",
-  "name": "crevents: Client for the Crossref Events API",
+  "description": "Client for the 'Crossref' Events API\n    <https://www.eventdata.crossref.org/guide/>.",
+  "name": "crevents: Client for the 'Crossref' Events API",
   "codeRepository": "https://github.com/ropensci/crevents",
   "issueTracker": "https://github.com/ropensci/crevents/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.0.5.9244",
+  "version": "0.0.7.92",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.5.0",
+    "version": "3.6.2",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.5.0 (2018-04-23)",
+  "runtimePlatform": "R version 3.6.2 Patched (2019-12-12 r77564)",
   "author": [
     {
       "@type": "Person",
       "givenName": "Scott",
       "familyName": "Chamberlain",
-      "email": "myrmecocystus+r@gmail.com"
+      "email": "sckott@protonmail.com",
+      "@id": "https://orcid.org/0000-0003-1444-9135"
     }
   ],
   "maintainer": [
@@ -31,7 +32,8 @@
       "@type": "Person",
       "givenName": "Scott",
       "familyName": "Chamberlain",
-      "email": "myrmecocystus+r@gmail.com"
+      "email": "sckott@protonmail.com",
+      "@id": "https://orcid.org/0000-0003-1444-9135"
     }
   ],
   "softwareSuggestions": [
@@ -46,6 +48,18 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=testthat"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "vcr",
+      "name": "vcr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=vcr"
     }
   ],
   "softwareRequirements": [
@@ -53,7 +67,6 @@
       "@type": "SoftwareApplication",
       "identifier": "crul",
       "name": "crul",
-      "version": ">= 0.4.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -66,7 +79,6 @@
       "@type": "SoftwareApplication",
       "identifier": "jsonlite",
       "name": "jsonlite",
-      "version": ">= 1.5",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -79,7 +91,6 @@
       "@type": "SoftwareApplication",
       "identifier": "tibble",
       "name": "tibble",
-      "version": ">= 1.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -87,23 +98,20 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=tibble"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "xml2",
-      "name": "xml2",
-      "version": ">= 1.0.0",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=xml2"
     }
   ],
-  "contIntegration": "https://travis-ci.org/ropenscilabs/crevents",
+  "contIntegration": "https://travis-ci.org/ropensci/crevents",
   "readme": "https://github.com/ropensci/crevents/blob/master/README.md",
-  "fileSize": "5.301KB",
-  "keywords": ["crossref", "altmetrics", "rstats"]
+  "fileSize": "11.686KB",
+  "keywords": [
+    "crossref",
+    "altmetrics",
+    "rstats",
+    "r",
+    "r-package"
+  ],
+  "relatedLink": "https://docs.ropensci.org/crevents",
+  "contributor": {},
+  "copyrightHolder": {},
+  "funder": {}
 }
