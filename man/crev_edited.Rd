@@ -119,7 +119,7 @@ the same as the obj_id.
 
 \examples{
 if (crul::ok("http://api.eventdata.crossref.org/v1/events?rows=0")) {
-res <- crev_edited(rows = 3)
+res <- crev_edited(rows = 1)
 res
 }
 
