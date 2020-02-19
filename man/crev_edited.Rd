@@ -120,11 +120,7 @@ the same as the obj_id.
 \examples{
 if (crul::ok("http://api.eventdata.crossref.org/v1/events?rows=0")) {
 res <- crev_edited(rows = 3)
-res$status
-res$`message-type`
-res$message$`total-results`
-res$message$`items-per-page`
-res$message$events
+res
 }
 
 \dontrun{
@@ -152,7 +148,7 @@ crev_edited(rows = 10, obj_id = "10.1186/s40536-017-0036-8")
 
 # Use cursor
 res <- crev_edited(rows = 10)
-crev_edited(rows = 10, cursor = res$message$`next-cursor`)
+crev_edited(rows = 10, cursor = res$message$`next-cursor`, verbose = TRUE)
 
 # facet
 crev_edited(rows = 0, source = 'reddit', facet = "subj-id.domain:10")

@@ -59,7 +59,6 @@ metadf <- function(x){
 }
 
 asl <- function(z) {
-  # z <- tolower(z)
   if (is.logical(z) || tolower(z) == "true" || tolower(z) == "false") {
     if (z) {
       return('true')

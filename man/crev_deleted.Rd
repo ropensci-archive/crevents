@@ -119,13 +119,8 @@ the same as the obj_id.
 
 \examples{
 if (crul::ok("http://api.eventdata.crossref.org/v1/events?rows=0")) {
-(res <- crev_deleted(rows = 3))
-res$status
-res$`message-type`
-res$message$`total-results`
-res$message$`items-per-page`
-res$message$events
-res$message$events$obj_id
+res <- crev_deleted(rows = 3)
+res
 }
 
 \dontrun{

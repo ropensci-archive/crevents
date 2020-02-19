@@ -51,12 +51,8 @@
 #' 
 #' @examples
 #' if (crul::ok("http://api.eventdata.crossref.org/v1/events?rows=0")) {
-#' (res <- crev_query(rows = 4))
-#' res$status
-#' res$`message-type`
-#' res$message$`total-results`
-#' res$message$`items-per-page`
-#' res$message$events
+#' res <- crev_query(rows = 4)
+#' res
 #' }
 #' 
 #' \dontrun{

@@ -5,11 +5,7 @@
 #' @examples 
 #' if (crul::ok("http://api.eventdata.crossref.org/v1/events?rows=0")) {
 #' res <- crev_edited(rows = 3)
-#' res$status
-#' res$`message-type`
-#' res$message$`total-results`
-#' res$message$`items-per-page`
-#' res$message$events
+#' res
 #' }
 #' 
 #' \dontrun{
@@ -37,7 +33,7 @@
 #' 
 #' # Use cursor
 #' res <- crev_edited(rows = 10)
-#' crev_edited(rows = 10, cursor = res$message$`next-cursor`)
+#' crev_edited(rows = 10, cursor = res$message$`next-cursor`, verbose = TRUE)
 #' 
 #' # facet
 #' crev_edited(rows = 0, source = 'reddit', facet = "subj-id.domain:10")
