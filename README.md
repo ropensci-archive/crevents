@@ -5,8 +5,12 @@ crevents
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![cran checks](https://cranchecks.info/badges/worst/crevents)](https://cranchecks.info/pkgs/crevents)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Build Status](https://travis-ci.org/ropensci/crevents.svg?branch=master)](https://travis-ci.org/ropensci/crevents)
 [![Build status](https://ci.appveyor.com/api/projects/status/1a17vr2045iygx8f?svg=true)](https://ci.appveyor.com/project/sckott/crevents)
+[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/crevents)](https://github.com/metacran/cranlogs.app)
+[![cran version](https://www.r-pkg.org/badges/version/crevents)](https://cran.r-project.org/package=crevents)
 
 `crevents`  Crossref events data R client
 
@@ -32,8 +36,7 @@ development version
 
 
 ```r
-install.packages("devtools")
-devtools::install_github("ropensci/crevents")
+remotes::install_github("ropensci/crevents")
 ```
 
 
@@ -57,7 +60,7 @@ crev_query(rows = 3)
 #> [1] "68fb09a4-fb4b-492c-bce2-71f3e8880e4c"
 #> 
 #> $message$`total-results`
-#> [1] 441555734
+#> [1] 472054013
 #> 
 #> $message$`items-per-page`
 #> [1] 3
