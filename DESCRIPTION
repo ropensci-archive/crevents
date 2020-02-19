@@ -5,14 +5,15 @@ Description: Client for the 'Crossref' Events API
     Events service captures discussion of scholarly works (e.g.,
     peer-reviewed publications) in non-traditional places such
     as blogs and social media.
-Version: 0.1.0
+Version: 0.1.1.91
 License: MIT + file LICENSE
 Authors@R: c(
     person("Scott", "Chamberlain", role = c("aut", "cre"),
       email = "myrmecocystus@gmail.com",
       comment = c(ORCID = "0000-0003-1444-9135"))
     )
-URL: https://docs.ropensci.org/crevents, https://github.com/ropensci/crevents
+URL: https://github.com/ropensci/crevents (devel)
+    https://docs.ropensci.org/crevents (docs)
 BugReports: https://github.com/ropensci/crevents/issues
 LazyData: true
 Roxygen: list(markdown = TRUE)
