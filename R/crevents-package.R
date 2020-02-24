@@ -13,3 +13,30 @@
 #' @author Scott Chamberlain
 #' @keywords package
 NULL
+
+#' Example result data from [crev_query()]
+#'
+#' A list
+#'
+#' @name dat_crev_query
+#' @docType data
+#' @keywords data
+NULL
+
+#' Example result data from [crev_deleted()]
+#'
+#' A list
+#'
+#' @name dat_crev_deleted
+#' @docType data
+#' @keywords data
+NULL
+
+#' Example result data from [crev_edited()]
+#'
+#' A list
+#'
+#' @name dat_crev_edited
+#' @docType data
+#' @keywords data
+NULL

@@ -10,7 +10,16 @@ crevents_ua <- function() {
   paste0(versions, collapse = " ")
 }
 
+eg_data <- function(x) {
+  switch(x,
+    'events' = dat_crev_query,
+    'events/edited' = dat_crev_edited,
+    'events/deleted' = dat_crev_deleted
+  )
+}
+
 crev_GET <- function(endpoint, args, ...) {
+  if (identical(Sys.getenv("NOT_CRAN"), "true")) return(eg_data(endpoint))
   cli <- crul::HttpClient$new(
     url = cred_base(),
     opts = list(useragent = crevents_ua())
